@@ -184,7 +184,7 @@ public class Hero extends Entity {
     public void punch(Entity opponent){
         int enemyHitChance = Math.min(Math.max((opponent.hitChance-avoidChance),5),95);
         int myHitChance = Math.min(Math.max((hitChance-opponent.avoidChance),5),95);
-        System.out.println("EnemyChance: " + enemyHitChance + "MyChance: " +myHitChance);
+        System.out.println("Enemy chance to hit: " + enemyHitChance + " Hero chance to hit: " +myHitChance);
 
         //ENEMY PUNCH TO HERO
         if (Math.min(Math.max((opponent.hitChance-avoidChance),5),95) >= (int)(Math.random() * 100 + 1)) {
