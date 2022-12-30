@@ -60,12 +60,12 @@ public class Hero extends Entity {
     }
 
     public void update() throws InterruptedException {
-        /*if(gp.gameState == gp.fightState){
-            System.out.println("fightstate " + currentEnemyIndex);
+        if(gp.gameState == gp.fightState){
+            gp.ui.statusToDraw = "fightstate " + currentEnemyIndex;
         }
         else{
-                System.out.println("playstate " + currentEnemyIndex);
-        }*/
+            gp.ui.statusToDraw = "playstate " + currentEnemyIndex;
+        }
 
         if (health > maxHealth){ // not supposed to happen but you never know
             health = maxHealth;

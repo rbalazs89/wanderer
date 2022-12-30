@@ -16,11 +16,11 @@ public class Scorpion extends Entity implements Enemy {
         speed = 1;
         getImage();
         entityCollision = true;
-        damage = 42;
-        health = 150;
+        damage = 43;
+        health = 160;
         defense = 19;
-        hitChance = 50;
-        avoidChance = 15;
+        hitChance = 65;
+        avoidChance = 20;
         isBoss = false;
         hasKey = false;
     }

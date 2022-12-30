@@ -58,6 +58,7 @@ public class GamePanel extends JPanel implements Runnable {
     }
 
     public void nextLevel() {
+        hero.health = hero.maxHealth;
         hero.hasKey = false;
         hero.x = 0;
         hero.y = 0;

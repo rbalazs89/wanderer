@@ -13,6 +13,7 @@ public class KeyHandler implements KeyListener {
     }
     public boolean upPressed, downPressed, leftPressed, rightPressed;
     public boolean enterPressed;
+    public boolean Tpressed = false;
     boolean checkDrawTime = false;
 
     @Override
@@ -22,6 +23,10 @@ public class KeyHandler implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         int code = e.getKeyCode();
+
+        if (code == KeyEvent.VK_T){
+            Tpressed = !Tpressed;
+        }
 
         if (code == KeyEvent.VK_ENTER){
             enterPressed = true;

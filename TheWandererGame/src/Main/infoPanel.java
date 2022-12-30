@@ -11,6 +11,7 @@ public class infoPanel {
     int widthSize = 4 * 72;
     Font arial_40, arial_80B;
     ///////////////////////////////////////////////////
+    public String statusToDraw = " ";
     private final int screenTile = 72;
     private final int screenTileXn = 12;
     private final int screenTileYn = 10;
@@ -66,11 +67,14 @@ public class infoPanel {
         }
         drawMessageBox(g2);
         drawInventoryAndStats(g2);
-        //showTheTime(g2);
         drawMessageInPanel(g2);
         drawControls(g2);
-
+        if (gp.keyH.Tpressed) {
+            showTheTime(g2);
+            showStatus(g2);
+        }
     }
+
     public void drawControls(Graphics2D g2){
         g2.setColor(Color.BLACK);
         g2.setFont(g2.getFont().deriveFont(20F));
@@ -96,8 +100,6 @@ public class infoPanel {
         y += 50;
         g2.drawImage(images[12], x, y, 80, 50, null);
         g2.drawString( "Interact",x + 35 + 60, y + 30);
-
-
 
     }
     public void drawMessageBox(Graphics2D g2){
@@ -283,15 +285,21 @@ public class infoPanel {
                 savedHealth2 = gp.hero.health;
             }
         }
-        g2.setFont(g2.getFont().deriveFont(24F));
+        g2.setFont(g2.getFont().deriveFont(30F));
         g2.setColor(Color.BLACK);
         g2.drawString(gp.hero.health + " / " + gp.hero.maxHealth, x1 + 96, 58);
         savedHealth = gp.hero.health;
     }
 
     public void showTheTime(Graphics2D g2) {
+        g2.setFont(g2.getFont().deriveFont(30F));
         playTime += (double) 1/60;
-        g2.drawString("Time: " + dFormat.format(playTime), gp.tileSize * 9, 65);
+        g2.drawString("Time: " + dFormat.format(playTime), gp.tileSize * 10, 660);
+    }
+
+    public void showStatus(Graphics2D g2) {
+        g2.setFont(g2.getFont().deriveFont(25F));
+        g2.drawString(statusToDraw, gp.tileSize * 10, 690);
     }
 
     public void showMessage(String text1) {

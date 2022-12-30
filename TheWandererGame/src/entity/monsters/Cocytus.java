@@ -18,10 +18,10 @@ public class Cocytus extends Entity implements Enemy {
         getImage();
         entityCollision = true;
         defense = 85;
-        damage = 110;
-        health = 500;
+        damage = 115;
+        health = 1100;
         hitChance = 100;
-        avoidChance = 10;
+        avoidChance = 12;
         isBoss = true;
         hasKey = false;
     }

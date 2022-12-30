@@ -526,12 +526,13 @@ public class AssetSetter {
             Arrays.fill(gp.monsterOrNPC, null);
 
             gp.monsterOrNPC[0] = new Scorpion(gp);
-            gp.monsterOrNPC[0].x = gp.tileSize * 7;
+            gp.monsterOrNPC[0].x = gp.tileSize * 4;
             gp.monsterOrNPC[0].y = gp.tileSize * 5;
 
             gp.monsterOrNPC[1] = new Scorpion(gp);
-            gp.monsterOrNPC[1].x = gp.tileSize * 7;
+            gp.monsterOrNPC[1].x = gp.tileSize * 4;
             gp.monsterOrNPC[1].y = gp.tileSize * 6;
+            gp.monsterOrNPC[1].direction = "up";
 
             gp.monsterOrNPC[2] = new Snake(gp);
             gp.monsterOrNPC[2].x = gp.tileSize * 9;

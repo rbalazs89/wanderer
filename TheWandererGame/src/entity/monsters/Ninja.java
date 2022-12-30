@@ -18,13 +18,13 @@ public class Ninja extends Entity implements Enemy {
         speed = 5;
         getNinjaImage();
         entityCollision = false; // make it false to allow easy retreat
-        damage = 65;
-        health = 220;
-        defense = 25;
+        damage = 69;
+        health = 230;
+        defense = 27;
         isBoss = true;
         hasKey = true;
         avoidChance = 0;
-        hitChance = 120;
+        hitChance = 150;
     }
 
     public void getNinjaImage() {

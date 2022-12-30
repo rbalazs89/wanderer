@@ -19,10 +19,10 @@ public class Nazgul extends Entity implements Enemy {
         getImage();
         entityCollision = true;
         defense = 45;
-        damage = 101;
-        health = 550;
+        damage = 102;
+        health = 750;
         hitChance = 88;
-        avoidChance = 7;
+        avoidChance = 15;
         isBoss = false;
         hasKey = false;
     }

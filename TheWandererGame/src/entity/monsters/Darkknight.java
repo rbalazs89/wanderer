@@ -19,8 +19,8 @@ public class Darkknight extends Entity implements Enemy {
         entityCollision = true;
         defense = 52;
         damage = 105;
-        health = 800;
-        hitChance = 66;
+        health = 900;
+        hitChance = 68;
         avoidChance = 16;
         isBoss = false;
         hasKey = false;
