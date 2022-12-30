@@ -24,7 +24,6 @@ public class Terrorblade extends Entity implements Enemy {
         isBoss = false;
         hasKey = false;
     }
-
     public void getImage() {
         try{
             up1 = ImageIO.read(getClass(). getResourceAsStream("/enemy/terrorblade.png"));

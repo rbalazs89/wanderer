@@ -12,8 +12,6 @@ public class ObjKey extends MyObjects {
         pickupMessage[3] = "You came across a key. You\ncan't help but wonder what\nit opens.\n";
         pickupMessage[4] = "You picked up a key. It might\nlead to the next level.\n";
         itemAlreadyOwnedMessage = "You already have a key. There\nis only so much room in your\npocket.\n";
-
-        name = "Key";
         try{
             image = ImageIO.read(getClass().getResourceAsStream("/objects/key.png"));
         }catch (IOException e){

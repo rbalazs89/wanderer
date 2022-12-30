@@ -7,7 +7,6 @@ public class CollisionChecker {
     public CollisionChecker(GamePanel gp) {
         this.gp = gp;
     }
-
     //check movement collision
     public void checkTile(Entity entity) {
 
@@ -183,7 +182,6 @@ public class CollisionChecker {
         }
         return index;
     }
-
     //checks if entity moves into hero
     //this is not working well for some reason
     public void checkHero(Entity entity){
@@ -253,6 +251,5 @@ public class CollisionChecker {
         entity.solidArea.height = entity.solidAreaDefaultHeight;
         gp.hero.solidArea.x = gp.hero.solidAreaDefaultX;
         gp.hero.solidArea.y = gp.hero.solidAreaDefaultY;
-
     }
 }

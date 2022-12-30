@@ -13,7 +13,6 @@ public class InfoPanel2 {
         arial_80B = new Font("Arial", Font.BOLD, 80);
     }
 
-
     public void draw(Graphics2D g2) {
         this.g2 = g2;
 
@@ -26,14 +25,7 @@ public class InfoPanel2 {
         if(gp.gameState == gp.pauseState){
             drawPauseScreen();
         }
-        //if(gp.gameState == gp.dialogueState){
-            //drawDialogueScreen();
-        //}
     }
-    public void drawDialogueScreen() {
-
-    }
-
     public void drawPauseScreen() {
         g2.setColor(Color.WHITE);
         g2.setFont(g2.getFont().deriveFont(120F));
@@ -42,10 +34,8 @@ public class InfoPanel2 {
         int y = gp.screenHeight/2;
         g2.drawString(text,x,y);
     }
-
     public int getXforCenteredText(String text) {
         int length = (int)g2.getFontMetrics().getStringBounds(text, g2).getWidth();
         return gp.screenWidth / 2 - length / 2;
     }
-
 }

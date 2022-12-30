@@ -12,7 +12,6 @@ public class ObjArmor extends MyObjects {
         pickupMessage[4] = "Congratulations. You found an\narmor. It will serve you well\nin the fights to come.";
         itemAlreadyOwnedMessage = "This is not supposed to happen.\nFinding even this one is hard\nenough";
 
-        name = "Armor";
         try{
             image = ImageIO.read(getClass().getResourceAsStream("/objects/armorRectangle.png"));
 

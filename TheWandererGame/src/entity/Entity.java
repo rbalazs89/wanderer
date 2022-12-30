@@ -12,7 +12,6 @@ public class Entity {
     public int defense = 10;
     public int avoidChance;
     public int hitChance;
-    //public int level = 1;
     public boolean hasKey = false;
     public GamePanel gp;
     public int x, y;
@@ -27,14 +26,11 @@ public class Entity {
     public int solidAreaDefaultHeight = 36;
     public int solidAreaDefaultX;
     public int solidAreaDefaultY;
-
     // collisionOn checks if entity can move in the certain direction in one moment when the game is running
     // not related to entity starting attribute
     public boolean collisionOn = false;
-
     //counter for AI movement
     public int actionLockCounter;
-
     //attribute if the entity has collision or can walk thru
     public boolean entityCollision;
     public boolean isBoss = false;
@@ -55,7 +51,6 @@ public class Entity {
         gp.cChecker.checkHero(this);
 
         if(collisionOn == false)
-
             switch ( direction) {
                 case "up":
                     y -= speed;
@@ -126,6 +121,5 @@ public class Entity {
         g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
     }
     public void speak() {
-
     }
 }

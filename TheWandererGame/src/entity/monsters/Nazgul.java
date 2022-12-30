@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.util.Random;
 
 public class Nazgul extends Entity implements Enemy {
-
     int deltax = 300;
     int deltay = 300;
     public Nazgul(GamePanel gp){
@@ -48,7 +47,7 @@ public class Nazgul extends Entity implements Enemy {
         actionLockCounter++;
         deltax = Math.abs(gp.hero.x - x);
         deltay = Math.abs(gp.hero.y - y);
-        if (Math.sqrt(Math.pow(deltax,2) + Math.pow(deltay,2)) > 299) {
+        if (Math.sqrt(Math.pow(deltax,2) + Math.pow(deltay,2)) > 200) {
             if (actionLockCounter > 60) {
                 Random random = new Random();
                 int i = random.nextInt(100) + 1;

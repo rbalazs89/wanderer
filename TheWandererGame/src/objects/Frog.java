@@ -5,7 +5,6 @@ import java.io.IOException;
 import static javax.imageio.ImageIO.read;
 
 public class Frog extends MyObjects {
-
     public Frog() {
         try{
             image = read(getClass().getResourceAsStream("/objects/frog.png"));
@@ -14,7 +13,7 @@ public class Frog extends MyObjects {
         }
     }
     public void objectAction(){
-        gp.ui.showMessage("I am a frog! I like the high\n temperature here.\n \nI give a reward if you\n kiss me!");
+        gp.ui.showMessage("I am a frog! I like the high\ntemperature here.\n\nI give a reward if you\nkiss me!");
         if(gp.hero.keyH.enterPressed){
             gp.playSE(21);
 

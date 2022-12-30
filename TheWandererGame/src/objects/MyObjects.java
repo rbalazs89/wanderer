@@ -6,11 +6,8 @@ import java.awt.image.BufferedImage;
 
 public class MyObjects {
     public String pickupMessage[] = new String[5];
-
     public int pillarcounter;
-
     public BufferedImage image;
-    public String name;
     public boolean collision = false;
     public int x, y;
     GamePanel gp;

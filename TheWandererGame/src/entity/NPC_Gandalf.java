@@ -89,7 +89,6 @@ public class NPC_Gandalf extends Entity{
             speedResetCounter = 0;
         }
     }
-
     public void speak() {
         if (currentDialogueIndex == 16){
             currentDialogueIndex = 15;

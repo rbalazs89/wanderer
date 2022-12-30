@@ -13,7 +13,6 @@ public class ObjBoots extends MyObjects {
         pickupMessage[4] = "The boots fits one like a\nglove. You feel more agile.";
         itemAlreadyOwnedMessage = "This is not supposed to happen.\nI have put only one boots in the game.";
 
-        name = "Boots";
         try{
             image = ImageIO.read(getClass().getResourceAsStream("/objects/boots.png"));
 

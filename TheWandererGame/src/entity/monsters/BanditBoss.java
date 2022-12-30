@@ -13,7 +13,7 @@ public class BanditBoss extends Entity implements Enemy {
         super(gp);
         direction = "down";
         speed = 0;
-        getBanditImage();
+        getóImage();
         entityCollision = true;
         damage = 16;
         health = 55;
@@ -25,7 +25,7 @@ public class BanditBoss extends Entity implements Enemy {
         defSpeed = 0;
     }
 
-    public void getBanditImage() {
+    public void getóImage() {
         try{
             up1 = ImageIO.read(getClass(). getResourceAsStream("/enemy/BanditBoss.png"));
             up2 = ImageIO.read(getClass(). getResourceAsStream("/enemy/BanditBoss.png"));

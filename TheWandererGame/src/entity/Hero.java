@@ -26,7 +26,6 @@ public class Hero extends Entity {
     public boolean interactCD = false;
     public boolean isCurrentlyGraced = false;
 
-    public int realHitChance; //only to print out and adjsut balance, not used
     public Hero(GamePanel gp, KeyHandler keyH) {
         super(gp);
         this.keyH = keyH;
@@ -67,6 +66,10 @@ public class Hero extends Entity {
         else{
                 System.out.println("playstate " + currentEnemyIndex);
         }*/
+
+        if (health > maxHealth){ // not supposed to happen but you never know
+            health = maxHealth;
+        }
 
         if (health <=0){
             gp.ui.gameIsFinished = true;
@@ -255,7 +258,6 @@ public class Hero extends Entity {
         isCurrentlyGraced = true;
         System.out.println("You retreated from the fight.");
         gp.playSE(13);
-        //currentEnemyIndex = 999;
     }
 
     public void retreat2() {
@@ -266,54 +268,12 @@ public class Hero extends Entity {
     public void pickUpObject(int i) throws InterruptedException {
         if (i != 999 && gp.obj[i].pickable) {
             gp.obj[i].objectAction();
-
-            //String objName = gp.obj[i].name;
-            //switch (objName) {
-            //   case "Key":
-            //        gp.obj[i].objectAction();
-                    /*if (!hasKey) {
-                        gp.playSE(3);
-                        hasKey = true;
-                        int tempnumber = (int)(Math.random()*5);
-                        gp.ui.showMessage(gp.obj[i].pickupMessage[tempnumber]);
-                        gp.obj[i] = null;
-                    }
-                    else{
-                        gp.ui.showMessage(gp.obj[i].itemAlreadyOwnedMessage);
-                    }*/
-                   // break;
-
-                /*case "Health":
-                    if (maxHealth != health) {
-                        health = Math.min((int)(health + maxHealth * 0.35), maxHealth);
-                        gp.playSE(1);
-                        int tempnumber = (int)(Math.random()*5);
-                        gp.ui.showMessage(gp.obj[i].pickupMessage[tempnumber]);
-                        gp.obj[i] = null;
-                    }
-                    else {
-                        gp.ui.showMessage(gp.obj[i].itemAlreadyOwnedMessage);
-                    }
-                    break;
-
-                case "Boots" :
-                    speed += 2;
-                    gp.playSE(2);
-                    int tempnumber = (int)(Math.random()*5);
-                    gp.ui.showMessage(gp.obj[i].pickupMessage[tempnumber]);
-                    gp.obj[i] = null;
-                    hasBoots = true;
-                    gp.nextLevel();
-                    //gp.ui.gameIsFinished = true;
-                    break;
-            }*/
         }
     }
 
     public void interactEntity(int i) {
         if (i !=999) {
             if (gp.monsterOrNPC[i] instanceof Enemy && isCurrentlyGraced == false){
-                //gp.monsterOrNPC[i].speed = 0;
                 gp.gameState = gp.fightState;
             }
             else if (keyH.enterPressed && interactCD == false && gp.monsterOrNPC[i] instanceof NPC_Gandalf){
@@ -369,7 +329,6 @@ public class Hero extends Entity {
         g2.drawImage(image, x, y, gp.tileSize, gp.tileSize, null);
     }
 
-
     public void levelUp() {
         if(level == 1){
             this.attack = 12;
@@ -403,12 +362,10 @@ public class Hero extends Entity {
     }
 
     private int calcAvoidChance(int defense) {
-        //Plot[((x+1)^(1/4))*(Log[1.4,(x+1)]), {x, -1, 100}]
         return (int)(Math.pow(defense + 1, 0.25) * myLog(defense + 1, 1.4));
     }
 
     private int calcHitChance(int attack) {
-        //Plot[70+((x+1)^(1/5))*(Log[1.3,(x+1)]), {x, -1, 100}]
         return (70 + (int)(Math.pow(attack + 1, 0.2) * myLog(attack + 1, 1.3)));
     }
 

@@ -15,7 +15,7 @@ public class Bear extends Entity implements Enemy {
         defSpeed = 3;
         direction = "left";
         speed = 3;
-        getBearImage();
+        getImage();
         entityCollision = true;
         hitChance = 120;
         avoidChance = 0;
@@ -27,7 +27,7 @@ public class Bear extends Entity implements Enemy {
         randomPhase = false;
     }
 
-    public void getBearImage() {
+    public void getImage() {
         try{
             up1 = ImageIO.read(getClass(). getResourceAsStream("/enemy/bear.png"));
             up2 = ImageIO.read(getClass(). getResourceAsStream("/enemy/bear.png"));

@@ -13,7 +13,6 @@ public class ObjHealth extends MyObjects{
         pickupMessage[4] = "You found a health potion. You\nfeel rejuvenated.";
         itemAlreadyOwnedMessage = "You are completely healthy.\nYou don't feel like drinking this\nright now.";
 
-        name = "Health";
         try{
             image = ImageIO.read(getClass().getResourceAsStream("/objects/health.png"));
 

@@ -429,10 +429,9 @@ public class AssetSetter {
             gp.monsterOrNPC[15].health = 35;
             gp.monsterOrNPC[15].x = gp.tileSize * 8;
             gp.monsterOrNPC[15].y = gp.tileSize * 8;
-
         }
 
-        if (currentMap == 2){
+        else if (currentMap == 2){
             Arrays.fill(gp.monsterOrNPC, null);
             double adjuster2 = 1.3;
 
@@ -460,7 +459,7 @@ public class AssetSetter {
             gp.monsterOrNPC[15].damage = (int)(gp.monsterOrNPC[15].damage * adjuster2);
         }
 
-        if (currentMap == 3){
+        else if (currentMap == 3){
             Arrays.fill(gp.monsterOrNPC, null);
             double adjuster3 = 1.4;
 
@@ -498,17 +497,17 @@ public class AssetSetter {
             gp.monsterOrNPC[15].damage = (int)(gp.monsterOrNPC[15].damage * adjuster3);
         }
 
-        if (currentMap == 4){
+        else if (currentMap == 4){
             Arrays.fill(gp.monsterOrNPC, null);
 
             gp.monsterOrNPC[0] = new Snake(gp);
             gp.monsterOrNPC[0].hasKey = true;
-            gp.monsterOrNPC[0].x = gp.tileSize * 7;
-            gp.monsterOrNPC[0].y = gp.tileSize * 5;
+            gp.monsterOrNPC[0].x = gp.tileSize * 5;
+            gp.monsterOrNPC[0].y = gp.tileSize * 3;
 
             gp.monsterOrNPC[1] = new Scorpion(gp);
-            gp.monsterOrNPC[1].x = gp.tileSize * 7;
-            gp.monsterOrNPC[1].y = gp.tileSize * 6;
+            gp.monsterOrNPC[1].x = gp.tileSize * 3;
+            gp.monsterOrNPC[1].y = gp.tileSize * 4;
 
             gp.monsterOrNPC[2] = new Snake(gp);
             gp.monsterOrNPC[2].x = gp.tileSize * 9;
@@ -523,7 +522,7 @@ public class AssetSetter {
             gp.monsterOrNPC[15].y = gp.tileSize * 0;
         }
 
-        if (currentMap == 5){
+        else if (currentMap == 5){
             Arrays.fill(gp.monsterOrNPC, null);
 
             gp.monsterOrNPC[0] = new Scorpion(gp);
@@ -547,7 +546,7 @@ public class AssetSetter {
             gp.monsterOrNPC[15].y = gp.tileSize * 9;
         }
 
-        if (currentMap == 6){
+        else if (currentMap == 6){
             Arrays.fill(gp.monsterOrNPC, null);
             double adjuster6 = 1.3;
             gp.monsterOrNPC[0] = new Scorpion(gp);
@@ -592,7 +591,7 @@ public class AssetSetter {
             gp.monsterOrNPC[15].damage = (int) (gp.monsterOrNPC[0].damage * adjuster6);
         }
 
-        if (currentMap == 7){
+        else if (currentMap == 7){
             Arrays.fill(gp.monsterOrNPC, null);
 
             gp.monsterOrNPC[0] = new SkeletonSpear(gp);
@@ -613,7 +612,7 @@ public class AssetSetter {
             gp.monsterOrNPC[15].y = gp.tileSize * 6;
         }
 
-        if (currentMap == 8){
+        else if (currentMap == 8){
             Arrays.fill(gp.monsterOrNPC, null);
 
             gp.monsterOrNPC[0] = new SkeletonSpear(gp);
@@ -652,13 +651,12 @@ public class AssetSetter {
             gp.monsterOrNPC[6].x = gp.tileSize * 9;
             gp.monsterOrNPC[6].y = gp.tileSize * 9;
 
-
             gp.monsterOrNPC[15] = new SkeletonBoss(gp);
             gp.monsterOrNPC[15].x = gp.tileSize * 11;
             gp.monsterOrNPC[15].y = gp.tileSize * 7;
         }
 
-        if (currentMap == 9){
+        else if (currentMap == 9){
             Arrays.fill(gp.monsterOrNPC, null);
             double adjuster9 = 1.3;
 
@@ -689,8 +687,7 @@ public class AssetSetter {
             gp.monsterOrNPC[15].damage = (int) (gp.monsterOrNPC[15].damage * adjuster9);
         }
 
-        if (currentMap == 10){
-
+        else if (currentMap == 10){
             Arrays.fill(gp.monsterOrNPC, null);
 
             gp.monsterOrNPC[0] = new Darkknight(gp);
@@ -698,12 +695,12 @@ public class AssetSetter {
             gp.monsterOrNPC[0].y = gp.tileSize * 6;
 
             gp.monsterOrNPC[1] = new Darkknight(gp);
-            gp.monsterOrNPC[1].x = gp.tileSize * 4;
+            gp.monsterOrNPC[1].x = gp.tileSize * 6;
             gp.monsterOrNPC[1].y = gp.tileSize * 1;
 
             gp.monsterOrNPC[2] = new Nazgul(gp);
-            gp.monsterOrNPC[2].x = gp.tileSize * 5;
-            gp.monsterOrNPC[2].y = gp.tileSize * 2;
+            gp.monsterOrNPC[2].x = gp.tileSize * 7;
+            gp.monsterOrNPC[2].y = gp.tileSize * 3;
 
             gp.monsterOrNPC[3] = new Nazgul(gp);
             gp.monsterOrNPC[3].x = gp.tileSize * 6;
@@ -717,8 +714,8 @@ public class AssetSetter {
             gp.monsterOrNPC[15].x = gp.tileSize * 10;
             gp.monsterOrNPC[15].y = gp.tileSize * 3;
         }
-        if (currentMap == 11){
 
+        else if (currentMap == 11){
             Arrays.fill(gp.monsterOrNPC, null);
 
             gp.monsterOrNPC[0] = new Darkknight(gp);
@@ -746,7 +743,7 @@ public class AssetSetter {
             gp.monsterOrNPC[15].y = gp.tileSize * 9;
 
         }
-        if (currentMap == 12){
+        else if (currentMap == 12){
             Arrays.fill(gp.monsterOrNPC, null);
 
             gp.monsterOrNPC[15] = new Boss(gp);
@@ -762,58 +759,59 @@ public class AssetSetter {
             gp.obj[15].y = 5 * gp.tileSize;
         }
 
-        if(gp.currentMap == 2 && gp.hero.currentEnemyIndex == 15){
+        else if(gp.currentMap == 2 && gp.hero.currentEnemyIndex == 15){
             gp.obj[15] = new ObjDoor();
             gp.obj[15].x = 11 * gp.tileSize;
             gp.obj[15].y = 9 * gp.tileSize;
         }
 
-        if(gp.currentMap == 3 && gp.hero.currentEnemyIndex == 15){
+        else if(gp.currentMap == 3 && gp.hero.currentEnemyIndex == 15){
             gp.obj[15] = new ObjDoor();
             gp.obj[15].x = 11 * gp.tileSize;
             gp.obj[15].y = 9 * gp.tileSize;
         }
 
-        if(gp.currentMap == 4 && gp.hero.currentEnemyIndex == 15){
+        else if(gp.currentMap == 4 && gp.hero.currentEnemyIndex == 15){
             gp.obj[15] = new ObjDoor();
             gp.obj[15].x = 11 * gp.tileSize;
             gp.obj[15].y = 3 * gp.tileSize;
         }
-        if(gp.currentMap == 5 && gp.hero.currentEnemyIndex == 15){
+        else if(gp.currentMap == 5 && gp.hero.currentEnemyIndex == 15){
             gp.obj[15] = new ObjDoor();
             gp.obj[15].x = 11 * gp.tileSize;
             gp.obj[15].y = 3 * gp.tileSize;
         }
 
-        if(gp.currentMap == 6 && gp.hero.currentEnemyIndex == 15){
+        else if(gp.currentMap == 6 && gp.hero.currentEnemyIndex == 15){
             gp.obj[15] = new ObjDoor();
             gp.obj[15].x = 0* gp.tileSize;
             gp.obj[15].y = 9 * gp.tileSize;
         }
 
-        if(gp.currentMap == 7 && gp.hero.currentEnemyIndex == 15){
+        else if(gp.currentMap == 7 && gp.hero.currentEnemyIndex == 15){
             gp.obj[15] = new ObjDoor();
             gp.obj[15].x = 4* gp.tileSize;
             gp.obj[15].y = 9 * gp.tileSize;
         }
-        if(gp.currentMap == 8 && gp.hero.currentEnemyIndex == 15){
+
+        else if(gp.currentMap == 8 && gp.hero.currentEnemyIndex == 15){
             gp.obj[15] = new ObjDoor();
             gp.obj[15].x = 9 * gp.tileSize;
             gp.obj[15].y = 9 * gp.tileSize;
         }
 
-        if(gp.currentMap == 9 && gp.hero.currentEnemyIndex == 15){
+        else if(gp.currentMap == 9 && gp.hero.currentEnemyIndex == 15){
             gp.obj[15] = new ObjDoor();
             gp.obj[15].x = 5 * gp.tileSize;
             gp.obj[15].y = 0 * gp.tileSize;
         }
 
-        if(gp.currentMap == 10 && gp.hero.currentEnemyIndex == 15){
+        else if(gp.currentMap == 10 && gp.hero.currentEnemyIndex == 15){
             gp.obj[15] = new ObjDoor();
             gp.obj[15].x = 5 * gp.tileSize;
             gp.obj[15].y = 0 * gp.tileSize;
         }
-        if(gp.currentMap == 11 && gp.hero.currentEnemyIndex == 15){
+        else if(gp.currentMap == 11 && gp.hero.currentEnemyIndex == 15){
             gp.obj[15] = new ObjDoor();
             gp.obj[15].x = 9 * gp.tileSize;
             gp.obj[15].y = 9 * gp.tileSize;
