@@ -19,8 +19,8 @@ public class Ninja extends Entity implements Enemy {
         getNinjaImage();
         entityCollision = false; // make it false to allow easy retreat
         damage = 69;
-        health = 230;
-        defense = 27;
+        health = 220;
+        defense = 25;
         isBoss = true;
         hasKey = true;
         avoidChance = 0;
