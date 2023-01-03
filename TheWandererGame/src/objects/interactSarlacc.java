@@ -10,7 +10,7 @@ public class interactSarlacc extends MyObjects {
 
     public interactSarlacc() {
         try{
-            image = read(getClass().getResourceAsStream("/objects/sarlacc.png"));
+            image = read(getClass().getResourceAsStream("/objects/sarlacc2.png"));
         }catch (IOException e) {
             e.printStackTrace();
         }
