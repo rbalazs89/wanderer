@@ -16,7 +16,7 @@ public class ObjNPCAngel extends MyObjects {
 
     public void objectAction() {
         if(gp.obj[6] == null) {
-            gp.ui.showMessage("Now you are ready to face\nthe demon lurking below. Don't\nneglect reading the stone tablets\nin the next level. They offer\ngreat wisdom.");
+            gp.ui.showMessage("Now you are ready to face\nthe demon lurking below. Don't\nneglect reading the stone tablets\ndeeper below. They offer\ngreat wisdom.");
         }
         else {
             gp.ui.showMessage("Before venturing further,\nstep into the light behind me\nto receive the blessing of the\nangels.");

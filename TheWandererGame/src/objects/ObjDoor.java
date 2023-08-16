@@ -21,7 +21,6 @@ public class ObjDoor extends MyObjects{
     public void objectAction() throws InterruptedException {
         if (gp.hero.hasKey) {
             gp.ui.showMessage("Congratulations, you have\nadvanced to level " + (gp.currentMap + 1 + "."));
-
             gp.nextLevel();
         }
     }

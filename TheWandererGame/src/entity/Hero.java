@@ -25,6 +25,16 @@ public class Hero extends Entity {
     public int interactionCounter = 0;
     public boolean interactCD = false;
     public boolean isCurrentlyGraced = false;
+    public int savedMaxHealth = 100;
+    public int savedDefense = 5;
+    public int savedAttack = 10;
+    public int savedHitChance = calcAvoidChance(defense);
+    public int savedAvoidChance = calcHitChance(attack);
+    public int savedHeroLevel = 1;
+    public boolean savedHasBoots = false;
+    public boolean savedHasSword = false;
+    public boolean savedHasArmor = false;
+    public int savedHeroSpeed = 2;
 
     public Hero(GamePanel gp, KeyHandler keyH) {
         super(gp);
@@ -67,12 +77,13 @@ public class Hero extends Entity {
             gp.ui.statusToDraw = "playstate " + currentEnemyIndex;
         }
 
-        if (health > maxHealth){ // not supposed to happen but you never know
+        if (health > maxHealth){ // not supposed to happen
             health = maxHealth;
         }
 
         if (health <=0){
             gp.ui.gameIsFinished = true;
+            gp.gameState = gp.deadState;
         }
 
         int entityIndex = gp.cChecker.checkEntity(this, gp.monsterOrNPC);
@@ -361,11 +372,11 @@ public class Hero extends Entity {
         health = 100;
     }
 
-    private int calcAvoidChance(int defense) {
+    public int calcAvoidChance(int defense) {
         return (int)(Math.pow(defense + 1, 0.25) * myLog(defense + 1, 1.4));
     }
 
-    private int calcHitChance(int attack) {
+    public int calcHitChance(int attack) {
         return (70 + (int)(Math.pow(attack + 1, 0.2) * myLog(attack + 1, 1.3)));
     }
 

@@ -1,8 +1,5 @@
 package Main;
 
-import entity.Entity;
-import objects.MyObjects;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -15,6 +12,7 @@ public class KeyHandler implements KeyListener {
     public boolean enterPressed;
     public boolean Tpressed = false;
     boolean checkDrawTime = false;
+    public boolean lPressed = false;
 
     @Override
     public void keyTyped(KeyEvent e) {
@@ -31,13 +29,18 @@ public class KeyHandler implements KeyListener {
         if (code == KeyEvent.VK_ENTER){
             enterPressed = true;
         }
+        if (code == KeyEvent.VK_L){
+            lPressed = true;
+            gp.restartLevel();
+            gp.ui.gameIsFinished = false;
+        }
 
         if (code == KeyEvent.VK_M){
             if (gp.musicOn) {
                 gp.stopMusic();
                 gp.musicOn = false;
             }
-            else if (!gp.musicOn) {
+            else {
                 gp.playMusic(gp.currentMap);
                 gp.musicOn = true;
             }
@@ -82,6 +85,7 @@ public class KeyHandler implements KeyListener {
                 gp.gameState = gp.playState;
             }
         }
+
     }
 
     @Override
@@ -106,6 +110,9 @@ public class KeyHandler implements KeyListener {
         }
         if (code == KeyEvent.VK_ENTER){
             enterPressed = false;
+        }
+        if (code == KeyEvent.VK_L){
+            lPressed = false;
         }
     }
 }

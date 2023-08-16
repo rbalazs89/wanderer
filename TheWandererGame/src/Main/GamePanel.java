@@ -46,7 +46,10 @@ public class GamePanel extends JPanel implements Runnable {
     public final int playState = 1;
     public final int pauseState = 2;
     public final int fightState = 3;
+
     //public final int dialogueState = 4;
+
+    public final int deadState = 5;
 
     public GamePanel() {
         this.setPreferredSize(new Dimension(screenWidth + ui.widthSize, screenHeight));
@@ -63,6 +66,48 @@ public class GamePanel extends JPanel implements Runnable {
         hero.x = 0;
         hero.y = 0;
         currentMap ++;
+        tileM.loadMap("/maps/map"+ Integer.toString(currentMap) +".txt"); //Don't remove Integer.toString.
+        aSetter.setObject(currentMap);
+        aSetter.setEntities(currentMap);
+        gameState = playState;
+        if (musicOn){
+            stopMusic();
+            playMusic(currentMap);
+        }
+        calculateEntityIndex();
+        mapStartMessage();
+        if (currentMap == 4){
+            hero.speed -= 1;
+        }
+
+        hero.savedHeroLevel = hero.level;
+        hero.savedMaxHealth = hero.maxHealth;
+        hero.savedDefense = hero.defense;
+        hero.savedAttack = hero.attack;
+        hero.savedHitChance = hero.hitChance;
+        hero.savedAvoidChance = hero.avoidChance;
+        hero.savedHasArmor = hero.hasArmor;
+        hero.savedHasBoots = hero.hasBoots;
+        hero.savedHasSword = hero.hasSword;
+        hero.savedHeroSpeed = hero.speed;
+    }
+
+    public void restartLevel(){
+        hero.level = hero.savedHeroLevel;
+        hero.maxHealth = hero.savedMaxHealth;
+        hero.health = hero.maxHealth;
+        hero.defense = hero.savedDefense;
+        hero.attack = hero.savedAttack;
+        hero.avoidChance = hero.calcAvoidChance(hero.defense);
+        hero.hitChance = hero.calcHitChance(hero.attack);
+        hero.hasKey = false;
+        hero.hasBoots = hero.savedHasBoots;
+        hero.hasArmor = hero.savedHasArmor;
+        hero.hasSword = hero.savedHasSword;
+        hero.speed = hero.savedHeroSpeed;
+
+        hero.x = 0;
+        hero.y = 0;
         tileM.loadMap("/maps/map"+ Integer.toString(currentMap) +".txt"); //Don't remove Integer.toString.
         aSetter.setObject(currentMap);
         aSetter.setEntities(currentMap);
@@ -92,7 +137,6 @@ public class GamePanel extends JPanel implements Runnable {
         gameThread.start();
     }
 
-    // CODE IN RUN METHOD IS TAKEN FROM TUTORIAL VIDEO, NEVER TOUCH THIS
     public void run() {
         double drawInterval = 1000000000/FPS;
         double delta = 0;
@@ -121,7 +165,7 @@ public class GamePanel extends JPanel implements Runnable {
             }
 
             if (timer >= 1000000000) {
-                //System.out.println(("FPS:" + drawCount));
+                System.out.println(("FPS:" + drawCount));
                 drawCount = 0;
                 timer = 0;
             }
@@ -163,10 +207,10 @@ public class GamePanel extends JPanel implements Runnable {
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D)g; // Change graphics to Graphics2D
         ui.countmessage1 = 0; // counter to detect more than 1 messages
-        /*long drawStart = 0;
+        long drawStart = 0;
         if(keyH.checkDrawTime){
             drawStart = System.nanoTime();
-        }*/
+        }
 
         tileM.draw(g2);
 
@@ -186,14 +230,14 @@ public class GamePanel extends JPanel implements Runnable {
 
         ui2.draw(g2);
 
-        /*if (keyH.checkDrawTime == true) {
+        if (keyH.checkDrawTime == true) {
             long drawEnd = System.nanoTime();
             long passed = drawEnd - drawStart;
 
             g2.setColor(Color.WHITE);
             g2.drawString("Draw Time:  " + passed, 10, 400);
             System.out.println(passed);
-        }*/
+        }
 
         //ENDING:
         if(currentMap == 12 && monsterOrNPC[15] == null){
@@ -222,7 +266,6 @@ public class GamePanel extends JPanel implements Runnable {
     public void mapStartMessage() {
         if (currentMap == 4){
             ui.showMessage("The wet sand hinders your\nmovement.");
-            hero.speed -= 1;
         }
         if (currentMap == 12){
             ui.showMessage("Read the tables for guidance.");

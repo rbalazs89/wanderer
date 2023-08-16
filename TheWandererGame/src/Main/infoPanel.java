@@ -14,16 +14,16 @@ public class infoPanel {
     public String statusToDraw = " ";
     private final int screenTile = 72;
     private final int screenTileXn = 12;
-    private final int screenTileYn = 10;
-    private int width = 4 * screenTile;
-    private int height = 10 * screenTile;
+    //private final int screenTileYn = 10;
+    private final int width = 4 * screenTile;
+    private final int height = 10 * screenTile;
     // declare again to not have conflict with GamePanel
     public BufferedImage images[] = new BufferedImage[15];
     public final int x1 = screenTile * screenTileXn;
     public final int y1 = 0;
-    public final int x2 = x1;
-    private final int y2 = screenTile * 2;
-    private int adjustdown = 30;
+    //public final int x2 = x1;
+    //private final int y2 = screenTile * 2;
+    private final int adjustdown = 30;
     public boolean messageOn = false;
     public String messageToDraw = "";
     int messageCounter = 0;
@@ -148,10 +148,21 @@ public class infoPanel {
         y += 50;
         g2.drawString(text, x , y);
 
+
+        g2.setFont(g2.getFont().deriveFont(30F));
+        g2.setColor(Color.BLACK);
+        text = "press L to restart this level";
+        textLength = (int)g2.getFontMetrics().getStringBounds(text,g2).getWidth();
+        x = gp.screenWidth / 2 - textLength/2;
+        y += 60;
+        g2.drawString(text, x , y);
+
         if (gp.musicOn) {
             gp.stopMusic();
         }
-        gp.gameThread = null;
+        gp.gameState = gp.fightState;
+        //gp.pauseState = true;
+        //gp.gameThread = null;
     }
     public void drawCompleted (Graphics2D g2) {
         g2.setFont(arial_40);
